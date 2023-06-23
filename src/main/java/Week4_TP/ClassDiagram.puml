@@ -1,0 +1,37 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Title Class Diagram
+
+class Veiculo{
+ - String matricula
+ - int cilindrada
+ - String cor
+ + calcularImposto() : double
+}
+
+
+interface Cores{
+ {static} +AZUL: String
+ {static} +CINZENTO: String
+ {static} +ENCARNADO: String
+ {static} +VERDE: String
+}
+
+class Moradia{
+  - String morada
+  - float area
+  - String cor
+  + calcularImposto() : double
+}
+
+interface Tributaveis{
+  {static} -calcularImposto
+}
+
+Veiculo ..|> Cores
+Moradia ..|> Cores
+Veiculo ...|> Tributaveis
+Moradia ..|> Tributaveis
+
+@enduml
