@@ -1,4 +1,4 @@
-package org.dei.data.Week2_PL;
+package Week2_PL;
 
 public class Data {
 

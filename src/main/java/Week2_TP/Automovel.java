@@ -1,4 +1,4 @@
-package org.dei.automovel.Week2_TP;
+package Week2_TP;
 
 public class Automovel {
 
