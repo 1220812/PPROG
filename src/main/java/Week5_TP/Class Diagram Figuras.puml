@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Title Class Diagram - Figuras
+
+abstract class Figura{
+- String : cor
++ calcularArea()
+}
+
+class Retangulo{
+- double : comprimento
+- double : largura
+}
+
+class Circulo{
+- double : raio
+}
+
+Figura <|-- Retangulo
+Figura <|-- Circulo
+
+@enduml

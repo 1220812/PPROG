@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Title Class Diagram - Contadores
+
+abstract class Contadores{
+- int : consumoMesAtual
+- String : identificacao
+- String : nomeCliente
++ calcularCustoConsumo()
+}
+
+class Gas{
+- double custoUnitario
+}
+
+class EletricidadeTarifaSimples{
+- double : potenciaContratada
+- double : precoMinimoPorKwH
+- double : precoMaximoPorKwH
+}
+
+class EletricidadeTarifaBiHorario{
+- int : horasDeVazio
+- int : horasForaVazio
+- double : tarifarioHorasVazio
+- double : tarifarioHorasForaVazio
+}
+
+Contadores <|-- Gas
+Contadores <|-- EletricidadeTarifaSimples
+Contadores <|-- EletricidadeTarifaBiHorario
+
+@enduml
