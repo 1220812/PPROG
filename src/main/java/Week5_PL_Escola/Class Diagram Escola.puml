@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Title Class Diagram - Escola
+
+abstract class Elemento{
+- String : nome
+- int : numeroIdentificacaoCivil
++ calcularValorMensal()
+}
+
+enum Categoria{
+ASSISTENTE
+ADJUNTO
+COORDENADOR
+}
+
+class Professor{
+}
+
+class Aluno{
+- boolean : bolseiro
+- int : numeroMecanografico
+}
+
+Elemento <|-- Aluno
+Elemento <|-- Professor
+Professor "1" --> "1" Categoria :  tem simultâneamente >
+
+@enduml
