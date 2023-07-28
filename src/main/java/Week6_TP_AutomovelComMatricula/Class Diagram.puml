@@ -1,0 +1,44 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Title Class Diagram - Automóvel com matrícula
+
+class Automovel{
+- marca : String
+- proprietário : Pessoa
+- matricula : Matricula
+}
+
+class Pessoa{
+- nome : String
+- idCivil : int
++ equals(Object outroObjeto)
+}
+
+class Matricula{
+- matricula : String
+- dataRegisto : Data
+}
+
+class Data{
+- ano : int
+- mes : int
+- dia : int
++ toAnoMesDiaString() : String
++ equals((Object outroObjeto) : boolean
++ diaDaSemana() : String
++ isMaior(Data outraData) : boolean
++ diferenca(Data outraData) : int
++ diferenca(int ano, int mes, int dia) : int
++ isAnoBissexto(int ano) : boolean
++ dataAtual() : Data
++ contaDias() : int
+}
+
+Automovel  --> "1..*" Pessoa : owns
+
+Automovel  --> "1 " Matricula : has
+
+Matricula  --> "1 " Data : has
+
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Title Class Diagram - Automóvel com proprietário
+
+class Automovel{
+- marca : String
+- proprietário : Pessoa
+}
+
+class Pessoa{
+- nome : String
+- idCivil : int
++ equals(Object outroObjeto)
+}
+
+Automovel  --> "1..*" Pessoa : owns <
+
+@enduml
