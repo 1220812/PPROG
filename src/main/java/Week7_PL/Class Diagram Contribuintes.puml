@@ -1,0 +1,41 @@
+@startuml
+
+'skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam linetype polyline
+'skinparam linetype orto
+
+skinparam classAttributeIconSize 0
+
+Title Class Diagram Vencimentos
+
+abstract Contribuinte{
+ - String : nome
+ - String : morada
+ - float : rendimentoTrabalho
+ - float : outrosRendimentos
+ + calcularValorImposto()
+}
+
+class Reformado{
+}
+
+class TrabalhadorPorContaOutrem{
+ - String : nomeEmpresa
+}
+
+class TrabalhadorContaPropria{
+ - String : profissao
+}
+
+class Desempregado{
+ - int : nMesesParado
+}
+
+Contribuinte <|-- Reformado
+Contribuinte <|-- TrabalhadorPorContaOutrem
+Contribuinte <|-- TrabalhadorContaPropria
+Contribuinte <|-- Desempregado
+
+@enduml
