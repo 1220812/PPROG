@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Title Class Diagram - Empregado
+
+Class Empregado{
+- primeiroNome : String
+- ultimoNome : String
+- dataContrato : Data
+- horaEntrada : Tempo
+- horaSaida : Tempo
++ calcularNumeroHorasSemanais (horaEntrada, horaSaida) : int
++ determinarTempoDeContrato(dataContrato) : int
+}
+
+Class Data{
+- ano : int
+- mes : int
+- dia : int
++ toAnoMesDiaString() : String
++ diaDaSemana() : String
++ compareTo(outraData) : int
++ isMaior(outraData) : boolean
++ diferenca(outraData) : int
++ diferenca(ano, mes, dia) : int
++ isAnoBissexto(ano) : int
++ dataAtual() : Data
++ contaDias()
+}
+
+Class Tempo{
+- horas : int
+- minutos : int
+- segundos : int
++ toStringHHMMSS() : String
++ compareTo(outroTempo) : int
++ tick() : void
++ isMaior(outroTempo) : boolean
++ isMaior(horas, minutos, segundos) : boolean
++ diferencaEmSegundos (outroTempo) : int
++ diferencaEmTempo (outroTempo) : Tempo
++ tempoAtual() : Tempo
++ toSegundos() : int
+}
+
+Empregado --> Data
+Empregado --> Tempo
+
+@enduml
