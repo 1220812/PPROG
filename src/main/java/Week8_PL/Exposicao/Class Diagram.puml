@@ -12,7 +12,7 @@ class Quadro{
 class Exposicao{
 - designacao : String
 - anoRealizacao : int
-- quadros : Quadro
+- quadros : list
 + adicionarQuadro(quadro) : boolean
 + removerQuadro(quadro) : boolean
 }
